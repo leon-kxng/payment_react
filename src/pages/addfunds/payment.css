@@ -1,0 +1,85 @@
+.modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+
+  .modal-content,
+  .modal-content * { /* This targets the modal-content and all its children */
+    border: none;
+  }
+  
+  h2 {
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .close-modal {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Additional styles for the payment details form */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+  }
+  
+  button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* This assumes .input-group divs are wrapping each label-input pair */
+  .input-group {
+    margin-bottom: 20px;
+  }

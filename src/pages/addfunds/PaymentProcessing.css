@@ -1,0 +1,47 @@
+/* PaymentProcessing.css */
+
+.payment-processing-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+  .payment-processing-modal-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  }
+  
+  .payment-processing-modal-content {
+    text-align: center;
+  }
+  
+  .payment-processing-modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .payment-processing-modal-content p {
+    margin-bottom: 8px;
+  }
+  
+  .payment-processing-modal-content .close-modal {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .payment-processing-modal-content .close-modal:hover {
+    background-color: #ccc;
+  }
+  
