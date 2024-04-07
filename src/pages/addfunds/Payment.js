@@ -7,16 +7,16 @@ const Payment = ({ toggleModal }) => {
   const [amount, setAmount] = useState("");
   const [showProcessing, setShowProcessing] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(true); // Initially show payment modal
-  const [transactionStatus, setTransactionStatus] = useState(""); // Transaction status message
+  const [transactionStatus] = useState(""); // Transaction status message
+
+  // Define the API key here
+  const apiKey = 'FBbLzy7uc41';
 
   const pay = () => {
     // Close the payment modal
     setShowPaymentModal(false);
     // Show the PaymentProcessing modal
     setShowProcessing(true);
-    
-    // Replace 'YOUR_TINYPESA_API_KEY' with your actual API key
-    const apiKey = 'FBbLzy7uc41';
     
     // Construct the request body for Tinypesa API
     const requestBody = new URLSearchParams({
@@ -38,47 +38,14 @@ const Payment = ({ toggleModal }) => {
       if (!response.ok) {
         console.error("Payment processing failed");
       }
+      // Show PaymentProcessing modal immediately after initializing payment
+      setShowProcessing(true);
       return response.json();
-    })
-    .then(data => {
-      // After successfully processing payment with Tinypesa API, send data to Flask backend
-      sendToBackend(data);
     })
     .catch(error => {
       console.error("Error during payment processing:", error);
     });
   };
-
-  const sendToBackend = (paymentData) => {
-    // Make a request to your Flask backend
-    fetch("https://pyamentflask.replit.app/callback", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(paymentData),
-    })
-    .then(response => {
-        if (!response.ok) {
-            console.error("Error sending data to backend");
-            throw new Error("Error sending data to backend");
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Set transaction status message based on response
-        if (data.message === "Payment processed successfully") {
-            setTransactionStatus("Transaction successful");
-        } else {
-            setTransactionStatus("Transaction cancelled");
-        }
-    })
-    .catch(error => {
-        console.error("Error handling response:", error);
-        setTransactionStatus("Error occurred during transaction");
-    });
-};
-
 
   const handlePhoneNumberChange = (event) => {
     setPhoneNumber(event.target.value);
