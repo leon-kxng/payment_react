@@ -51,7 +51,7 @@ const Payment = ({ toggleModal }) => {
 
   const sendToBackend = (paymentData) => {
     // Make a request to your Flask backend
-    fetch("http://localhost:5000/callback", {
+    fetch("https://pyamentflask.replit.app/callback", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
