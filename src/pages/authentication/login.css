@@ -1,0 +1,74 @@
+/* login.css */
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Darken the background color */
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-content,
+.modal-content * {
+  border: none; /* Remove border from modal content and its children */
+}
+
+h2 {
+  color: #333;
+  text-transform: uppercase;
+}
+
+.close-modal {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Additional styles for the login form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for error messages */
+.error-message {
+  color: red;
+}

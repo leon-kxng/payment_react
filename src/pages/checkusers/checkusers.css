@@ -1,0 +1,69 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content {
+  margin-bottom: 20px;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Limit image size to 72px */
+.modal img {
+  max-width: 72px;
+  max-height: 72px;
+}
+
+/* Card layout styles */
+.card {
+  display: inline-block; /* Change to inline block */
+  width: calc(50% - 20px); /* Set width for two cards per row */
+  margin-right: 20px; /* Add some spacing between cards */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Clear fix for wrapping */
+.card-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-container {
+  overflow: auto;
+}
+
+
+.card-avatar {
+  margin-right: 10px;
+}
+
+.card-text {
+  flex-grow: 1;
+}
