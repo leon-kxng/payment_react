@@ -28,7 +28,7 @@ const Login = () => {
   const fetchUserData = async (userId, token) => {
     // Log the request including headers
     console.log('Fetching user data request:', {
-      url: `http://localhost:5000/users`,
+      url: `https://pyamentflask.replit.app/users`,
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`, // Add the JWT token in the request headers
@@ -36,7 +36,7 @@ const Login = () => {
       },
     });
   
-    const response = await fetch(`http://localhost:5000/users`, {
+    const response = await fetch(`https://pyamentflask.replit.app/users`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`, // Add the JWT token in the request headers
